@@ -23,11 +23,16 @@ class MainViewController: UIViewController, MainViewDelegate {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItems = mvc_view?.rightBarButtonItems
+        mvc_view?.setSliderValue(0.0)
     }
     
     // MARK: - MainViewDelegate
     
     func userWantToGoNext() {
+        
+    }
+    
+    func userWantToChangeSlider(value: Float) {
         
     }
 }

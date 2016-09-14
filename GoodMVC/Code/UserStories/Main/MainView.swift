@@ -19,14 +19,18 @@ public extension NSObject{
 }
 
 @objc protocol MainViewDelegate {
-    @objc func userWantToGoNext()
+    func userWantToGoNext()
+    func userWantToChangeSlider(value: Float)
 }
 
 class MainView: MVCView {
     
+    weak var delegate: MainViewDelegate?
+    
     // MARK: - Outlets
     
-    weak var nextBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var centerSlider: UISlider!
+    @IBOutlet weak var sliderLabel: UILabel!
     
     // MARK: - Lifecycle
     
@@ -38,20 +42,27 @@ class MainView: MVCView {
             insertSubview(view, atIndex: 0)
             view.frame = bounds
             
-            nextBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextItemTapped))
+            let nextBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextBarButtonTapped))
             
             rightBarButtonItems = [UIBarButtonItem]()
             rightBarButtonItems?.append(nextBarButtonItem)
         }
     }
     
-    // MARK: - Delegate
+    // MARK: - Public
     
-    func setDelegate(delegate: MainViewDelegate) {
-        nextBarButtonItem.action = #selector(delegate.userWantToGoNext)
+    func setSliderValue(value: Float) {
+        centerSlider.value = value
+        sliderLabel.text = "Value: \(value)"
     }
     
-    @objc func nextItemTapped() {
-        
+    // MARK: - Actions
+    
+    @objc func nextBarButtonTapped(sender: UIBarButtonItem) {
+        delegate?.userWantToGoNext()
+    }
+    
+    @objc func sliderValueChanged(sender: UISlider) {
+        delegate?.userWantToChangeSlider(sender.value)
     }
 }

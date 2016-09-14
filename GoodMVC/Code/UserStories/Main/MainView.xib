@@ -5,7 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView" customModule="GoodMVC" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView" customModule="GoodMVC" customModuleProvider="target">
+            <connections>
+                <outlet property="centerSlider" destination="utB-s8-gA5" id="eAg-m5-Rux"/>
+                <outlet property="sliderLabel" destination="fJ2-2n-Rgn" id="7F1-kA-zwe"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -17,13 +22,33 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="utB-s8-gA5">
+                    <rect key="frame" x="98" y="318.5" width="179" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ2-2n-Rgn">
+                    <rect key="frame" x="166" y="289" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QZW-7I-zV9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="H9y-Kq-xaR"/>
+                <constraint firstItem="utB-s8-gA5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OYb-Rk-ecR"/>
+                <constraint firstItem="fJ2-2n-Rgn" firstAttribute="centerX" secondItem="utB-s8-gA5" secondAttribute="centerX" id="aCy-HP-Ybk"/>
+                <constraint firstItem="utB-s8-gA5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="oWi-Jr-7E9"/>
                 <constraint firstItem="QZW-7I-zV9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="122" id="s6V-Fk-jnE"/>
+                <constraint firstAttribute="trailing" secondItem="utB-s8-gA5" secondAttribute="trailing" constant="100" id="v8B-1T-9Ic"/>
+                <constraint firstItem="utB-s8-gA5" firstAttribute="top" secondItem="fJ2-2n-Rgn" secondAttribute="bottom" constant="8.5" id="vGL-of-YQ4"/>
+                <constraint firstItem="utB-s8-gA5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xGl-07-fDi"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="xGl-07-fDi"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
