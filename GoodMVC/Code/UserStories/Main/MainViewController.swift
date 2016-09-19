@@ -38,10 +38,10 @@ class MainViewController: UIViewController, MainViewDelegate {
     
     func userWantToGoNext() {
         model.save()
-        performSegueWithIdentifier("SecondViewController", sender: self)
+        performSegue(withIdentifier: "SecondViewController", sender: self)
     }
     
-    func userWantToChangeSlider(value: Float) {
+    func userWantToChangeSlider(_ value: Float) {
         model.progress = value
         print("Model progress: \(model.progress)")
         mvc_view?.setSliderValue(value)

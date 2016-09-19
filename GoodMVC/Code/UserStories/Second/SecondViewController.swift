@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    private let model = SecondModel()
+    fileprivate let model = SecondModel()
     
     var mvc_view: SecondView? {
         if let view = view as? SecondView {

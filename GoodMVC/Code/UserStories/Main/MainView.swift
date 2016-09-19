@@ -10,17 +10,17 @@ import UIKit
 
 public extension NSObject{
     public class var nameOfClass: String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
     public var nameOfClass: String {
-        return NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
+        return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
     }
 }
 
 @objc protocol MainViewDelegate {
     func userWantToGoNext()
-    func userWantToChangeSlider(value: Float)
+    func userWantToChangeSlider(_ value: Float)
 }
 
 class MainView: MVCView {
@@ -34,18 +34,18 @@ class MainView: MVCView {
     
     // MARK: - Public
     
-    func setSliderValue(value: Float) {
+    func setSliderValue(_ value: Float) {
         centerSlider.value = value
         sliderLabel.text = "Value: \(value)"
     }
     
     // MARK: - Actions
     
-    @objc func nextBarButtonTapped(sender: UIBarButtonItem) {
+    @objc func nextBarButtonTapped(_ sender: UIBarButtonItem) {
         delegate?.userWantToGoNext()
     }
     
-    @IBAction func sliderValueChanged(sender: UISlider) {
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
         delegate?.userWantToChangeSlider(sender.value)
     }
     
@@ -54,7 +54,7 @@ class MainView: MVCView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let nextBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextBarButtonTapped))
+        let nextBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextBarButtonTapped))
         
         rightBarButtonItems = [UIBarButtonItem]()
         rightBarButtonItems?.append(nextBarButtonItem)
