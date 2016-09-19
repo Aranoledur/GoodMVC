@@ -8,6 +8,15 @@
 
 import UIKit
 
-class SecondView: MVCView {
+protocol SecondViewDelegate: class {
+    func userWantToOpenProfile()
+}
 
+class SecondView: MVCView {
+    
+    weak var delegate: SecondViewDelegate?
+
+    @IBAction func profileButtonTapped(_ sender: AnyObject) {
+        delegate?.userWantToOpenProfile()
+    }
 }
