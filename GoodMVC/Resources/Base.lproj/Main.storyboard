@@ -80,12 +80,27 @@
                     <view key="view" contentMode="scaleToFill" id="73P-y6-EJw" customClass="ProfileView" customModule="GoodMVC" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esi-3L-GEu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="qko-6c-wGW"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="mFT-Vt-61e" kind="embed" identifier="ProfileContentController" id="pbv-Bm-vFW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="esi-3L-GEu" firstAttribute="leading" secondItem="73P-y6-EJw" secondAttribute="leading" id="BPh-6y-E7G"/>
+                            <constraint firstAttribute="trailing" secondItem="esi-3L-GEu" secondAttribute="trailing" id="NJX-TS-e8W"/>
+                            <constraint firstItem="b2K-72-mNc" firstAttribute="top" secondItem="esi-3L-GEu" secondAttribute="bottom" id="pMk-7J-rmk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HiF-lN-Cse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2870" y="386"/>
+            <point key="canvasLocation" x="2869.5999999999999" y="385.45727136431788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rkJ-IY-3ON">
@@ -104,6 +119,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1P-xy-FGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="444" y="382"/>
+        </scene>
+        <!--Profile Content Controller-->
+        <scene sceneID="nHg-yT-bgI">
+            <objects>
+                <viewController id="mFT-Vt-61e" customClass="ProfileContentController" customModule="GoodMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8YK-ry-S1f" customClass="ProfileContentView" customModule="GoodMVC" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vo4-7B-cxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3684" y="352"/>
         </scene>
     </scenes>
 </document>

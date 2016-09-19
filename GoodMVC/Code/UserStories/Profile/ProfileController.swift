@@ -11,6 +11,7 @@ import UIKit
 class ProfileController: Controller {
     
     private var headerController: ProfileHeaderController!
+    private var contentController: ProfileContentController!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,5 +35,11 @@ class ProfileController: Controller {
         
         mvc_view?.setHeaderSubivew(view: headerController.view as! ProfileHeaderView)
         headerController.didMove(toParentViewController: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProfileContentController" {
+            contentController = segue.destination as! ProfileContentController
+        }
     }
 }
