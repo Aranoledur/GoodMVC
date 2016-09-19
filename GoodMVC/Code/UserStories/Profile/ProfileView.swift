@@ -10,4 +10,14 @@ import UIKit
 
 class ProfileView: MVCView {
 
+    @IBOutlet weak var headerSubview: UIView!
+    @IBOutlet weak var contentSubview: UIView!
+    
+    func setHeaderSubivew(view: ProfileHeaderView) {
+        headerSubview.addFullFrameSubivew(view: view)
+    }
+    
+    func setContentSubview(view: ProfileContentView) {
+        contentSubview.addFullFrameSubivew(view: view)
+    }
 }
