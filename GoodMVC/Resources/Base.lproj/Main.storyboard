@@ -57,7 +57,7 @@
                         <viewControllerLayoutGuide type="top" id="DJB-9i-GbW"/>
                         <viewControllerLayoutGuide type="bottom" id="cGw-vj-9Ie"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8cJ-Ln-TII">
+                    <view key="view" contentMode="scaleToFill" id="8cJ-Ln-TII" customClass="ProfileHeaderView" customModule="GoodMVC" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

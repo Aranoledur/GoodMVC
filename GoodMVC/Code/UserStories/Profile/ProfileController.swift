@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileController: Controller {
+    
+    private var headerController: ProfileHeaderController!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -16,5 +18,21 @@ class ProfileController: Controller {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let headerContoller = storyboard.instantiateViewController(withIdentifier: "ProfileHeaderControllerID")
         addChildViewController(headerContoller)
+        headerController = headerContoller as! ProfileHeaderController
+    }
+    
+    var mvc_view: ProfileView? {
+        if let view = view as? ProfileView {
+            return view
+        }
+        
+        return nil
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mvc_view?.setHeaderSubivew(view: headerController.view as! ProfileHeaderView)
+        headerController.didMove(toParentViewController: self)
     }
 }

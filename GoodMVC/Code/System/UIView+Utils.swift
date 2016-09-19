@@ -11,6 +11,7 @@ import UIKit
 extension UIView {
     func addFullFrameSubivew(view: UIView) {
         addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: topAnchor),
             view.bottomAnchor.constraint(equalTo: bottomAnchor),
