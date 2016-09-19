@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		945BF3D61D90331D00701967 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BF3D51D90331D00701967 /* Controller.swift */; };
 		945BF3D81D90336800701967 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BF3D71D90336800701967 /* BaseRouter.swift */; };
+		945BF3DB1D90353700701967 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BF3DA1D90353700701967 /* ProfileController.swift */; };
+		945BF3DD1D90355F00701967 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BF3DC1D90355F00701967 /* ProfileModel.swift */; };
+		945BF3DF1D90357700701967 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945BF3DE1D90357700701967 /* ProfileView.swift */; };
+		945BF3E11D90358E00701967 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945BF3E01D90358E00701967 /* ProfileView.xib */; };
 		946D01E01D88C73800F67BF8 /* GoodMVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946D01DF1D88C73800F67BF8 /* GoodMVCTests.swift */; };
 		946D01F71D88C7C600F67BF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946D01F11D88C7C600F67BF8 /* Assets.xcassets */; };
 		946D01F81D88C7C600F67BF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946D01F21D88C7C600F67BF8 /* LaunchScreen.storyboard */; };
@@ -38,6 +42,10 @@
 /* Begin PBXFileReference section */
 		945BF3D51D90331D00701967 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		945BF3D71D90336800701967 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		945BF3DA1D90353700701967 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		945BF3DC1D90355F00701967 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		945BF3DE1D90357700701967 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		945BF3E01D90358E00701967 /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		946D01C71D88C73800F67BF8 /* GoodMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		946D01DB1D88C73800F67BF8 /* GoodMVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		946D01DF1D88C73800F67BF8 /* GoodMVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMVCTests.swift; sourceTree = "<group>"; };
@@ -76,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		945BF3D91D90351800701967 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				945BF3DA1D90353700701967 /* ProfileController.swift */,
+				945BF3DC1D90355F00701967 /* ProfileModel.swift */,
+				945BF3DE1D90357700701967 /* ProfileView.swift */,
+				945BF3E01D90358E00701967 /* ProfileView.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		946D01BE1D88C73800F67BF8 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,7 @@
 		946D01FD1D88C7DD00F67BF8 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				945BF3D91D90351800701967 /* Profile */,
 				946D01FE1D88C7DD00F67BF8 /* Main */,
 				946D02101D88D4EA00F67BF8 /* Second */,
 			);
@@ -268,6 +288,7 @@
 			files = (
 				946D01F71D88C7C600F67BF8 /* Assets.xcassets in Resources */,
 				946D02181D88D55400F67BF8 /* SecondView.xib in Resources */,
+				945BF3E11D90358E00701967 /* ProfileView.xib in Resources */,
 				946D020A1D88C91800F67BF8 /* MainView.xib in Resources */,
 				946D01F91D88C7C600F67BF8 /* Main.storyboard in Resources */,
 				946D01F81D88C7C600F67BF8 /* LaunchScreen.storyboard in Resources */,
@@ -289,12 +310,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				945BF3D61D90331D00701967 /* Controller.swift in Sources */,
+				945BF3DF1D90357700701967 /* ProfileView.swift in Sources */,
 				946D02011D88C7DD00F67BF8 /* MainController.swift in Sources */,
 				946D02121D88D4F900F67BF8 /* SecondModel.swift in Sources */,
+				945BF3DD1D90355F00701967 /* ProfileModel.swift in Sources */,
 				946D02161D88D51500F67BF8 /* SecondView.swift in Sources */,
 				946D020F1D88CD8E00F67BF8 /* MVCView.swift in Sources */,
 				946D02081D88C91000F67BF8 /* MainView.swift in Sources */,
 				946D02141D88D50700F67BF8 /* SecondController.swift in Sources */,
+				945BF3DB1D90353700701967 /* ProfileController.swift in Sources */,
 				945BF3D81D90336800701967 /* BaseRouter.swift in Sources */,
 				946D020D1D88CD7900F67BF8 /* AppDelegate.swift in Sources */,
 				946D02061D88C90100F67BF8 /* MainModel.swift in Sources */,
