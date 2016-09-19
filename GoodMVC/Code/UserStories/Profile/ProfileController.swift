@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileController: Controller {
     
+    let model = ProfileModel()
     private var headerController: ProfileHeaderController!
     private var contentController: ProfileContentController!
 
@@ -20,6 +21,7 @@ class ProfileController: Controller {
         let headerContoller = storyboard.instantiateViewController(withIdentifier: "ProfileHeaderControllerID")
         addChildViewController(headerContoller)
         headerController = headerContoller as! ProfileHeaderController
+        headerController.model = model
     }
     
     var mvc_view: ProfileView? {
@@ -40,6 +42,7 @@ class ProfileController: Controller {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ProfileContentController" {
             contentController = segue.destination as! ProfileContentController
+            contentController.model = model
         }
     }
 }

@@ -9,5 +9,5 @@
 import UIKit
 
 class ProfileHeaderController: Controller {
-
+    var model: ProfileModel!
 }
