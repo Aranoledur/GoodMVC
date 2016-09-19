@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondController: Controller {
     
     fileprivate let model = SecondModel()
     

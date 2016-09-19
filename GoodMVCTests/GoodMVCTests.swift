@@ -11,12 +11,12 @@ import XCTest
 
 class GoodMVCTests: XCTestCase {
     
-    var controller: MainViewController! = nil
+    var controller: MainController! = nil
     
     override func setUp() {
         super.setUp()
         
-        controller = MainViewController()
+        controller = MainController()
     }
     
     override func tearDown() {

@@ -8,8 +8,18 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MainViewDelegate {
+class MainController: Controller, MainViewDelegate {
     let model = MainModel()
+    var router: BaseRouter?
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        router = BaseRouter()
+    }
     
     var mvc_view: MainView? {
         if let view = view as? MainView {
@@ -38,7 +48,7 @@ class MainViewController: UIViewController, MainViewDelegate {
     
     func userWantToGoNext() {
         model.save()
-        performSegue(withIdentifier: "SecondViewController", sender: self)
+        router?.performSegueWithIdentifier(identifier: "SecondViewController", fromController: self, sender: self)
     }
     
     func userWantToChangeSlider(_ value: Float) {
