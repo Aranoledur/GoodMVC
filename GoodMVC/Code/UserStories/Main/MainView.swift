@@ -32,23 +32,6 @@ class MainView: MVCView {
     @IBOutlet weak var centerSlider: UISlider!
     @IBOutlet weak var sliderLabel: UILabel!
     
-    // MARK: - Lifecycle
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        let view = NSBundle.mainBundle().loadNibNamed(nameOfClass, owner: self, options: nil).first as? UIView
-        if let view = view {
-            insertSubview(view, atIndex: 0)
-            view.frame = bounds
-            
-            let nextBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextBarButtonTapped))
-            
-            rightBarButtonItems = [UIBarButtonItem]()
-            rightBarButtonItems?.append(nextBarButtonItem)
-        }
-    }
-    
     // MARK: - Public
     
     func setSliderValue(value: Float) {
@@ -62,7 +45,18 @@ class MainView: MVCView {
         delegate?.userWantToGoNext()
     }
     
-    @objc func sliderValueChanged(sender: UISlider) {
+    @IBAction func sliderValueChanged(sender: UISlider) {
         delegate?.userWantToChangeSlider(sender.value)
+    }
+    
+    // MARK: - Lifecycle
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        let nextBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(nextBarButtonTapped))
+        
+        rightBarButtonItems = [UIBarButtonItem]()
+        rightBarButtonItems?.append(nextBarButtonItem)
     }
 }

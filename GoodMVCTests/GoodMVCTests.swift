@@ -11,9 +11,12 @@ import XCTest
 
 class GoodMVCTests: XCTestCase {
     
+    var controller: MainViewController! = nil
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        controller = MainViewController()
     }
     
     override func tearDown() {
@@ -22,8 +25,7 @@ class GoodMVCTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        controller.userWantToGoNext()
     }
     
     func testPerformanceExample() {

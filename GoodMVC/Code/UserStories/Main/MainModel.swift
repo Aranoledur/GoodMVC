@@ -9,5 +9,13 @@
 import Foundation
 
 class MainModel {
+    var progress: Float = 0.0
     
+    func requestDataFromServerAndSyncWithCache(completion: MainModel -> Void) {
+        //Reactive, callbacks, delegates - it's up to you
+    }
+    
+    func save() {
+        
+    }
 }

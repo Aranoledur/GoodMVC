@@ -12,5 +12,16 @@ class MVCView: UIView {
     
     var leftBarButtonItems: [UIBarButtonItem]?
     var rightBarButtonItems: [UIBarButtonItem]?
-
+    
+    // MARK: - Lifecycle
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        let view = NSBundle.mainBundle().loadNibNamed(nameOfClass, owner: self, options: nil).first as? UIView
+        if let view = view {
+            insertSubview(view, atIndex: 0)
+            view.frame = bounds
+        }
+    }
 }
